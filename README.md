@@ -162,3 +162,78 @@ For use with PuTTY
 3. Select "Next: Add Tags."
 
 ### Review and launch the instance.
+
+
+### Accessing Your EC2 Instance.
+
+There are 4 ways to connect to your instance.
+### 1. EC2 instance connect.
+This can be connect to your instance in aws console.
+
+1. Open the AWS Management Console.
+2. Access the AWS Management Console and log in.
+3. Navigate to the EC2 dashboard:
+4. Click "EC2" in the "Services" menu.
+5. Select your instance.
+6. Find and choose your currently running instance from the "Instances" section.
+7. Click "Connect":
+8. Click the "Connect" button at the top of the page.
+9. Select "EC2 Instance Connect":
+10. Choose the "EC2 Instance Connect" tab.
+11. Connect:
+12. Click on the "Connect" button. A new browser window will appear, giving you terminal access to your instance.
+
+### 2. AWS Systems Manager Session Manager requires the following prerequisites:
+
+1. The AWS Systems Manager agent must be installed on your instance (it is the default for Amazon Linux and Windows).
+2. The instance must be located in a VPC with access to the Systems Manager endpoints.
+3. The IAM role associated with the instance must have the required rights (for example, AmazonSSMManagedInstanceCore).
+4. Open the AWS Management Console.
+5. Access the AWS Management Console and log in.
+6. Navigate to the EC2 dashboard:
+7. Click "EC2" in the "Services" menu.
+8. Select your instance.
+9. Find and choose your currently running instance from the "Instances" section.
+10. Click "Connect":
+11. Click the "Connect" button at the top of the page.
+12. Select "Session Manager":
+13. Choose the "Session Manager" tab.
+14. Start Session:
+15. Click on the "Connect" button. A new browser window will open, allowing you to connect to your instance via terminal without the need for SSH.
+
+
+### 3. SSH Client
+
+1. Open the Terminal (Linux/Mac) or Command Prompt (Windows):
+2. Go to the location where your key pair (.pem) file is placed.
+3. Changing Permissions (Linux/Mac):
+Run this command:
+````
+chmod 400 MyKeyPair.pem
+````
+
+4. Connect to your instance.
+5. To connect, use the following command (replace your-public-ip with your instance's public IP address).
+````
+ssh -i "MyKeyPair.pem" ubuntu@your-public-ip
+````
+Congratulations! You have successfully launched and accessed an EC2 instance with an Ubuntu AMI and a gp2 volume.
+
+### 4. EC2 Serial Console
+The EC2 Serial Console is a text-based interface that lets you access the serial port of your Amazon EC2 instance. This capability is especially useful for debugging booting, network settings, and other system-level issues when standard SSH access is unavailable.
+
+
+1. Accessing the EC2 Serial Console:
+2. Open the AWS Management Console.
+3. Access the AWS Management Console and log in.
+4. Navigate to the EC2 dashboard:
+5. Click "EC2" in the "Services" menu.
+6. Select your instance.
+7. In the "Instances" column, locate and pick the instance you wish to debug.
+8. Click "Connect":
+9. Click the "Connect" button at the top of the page.
+10. Select "Serial Console":
+11. Select the "Serial Console" tab.
+12. Connect:
+13. To open a session with the serial terminal, click the "Connect" button.
+
