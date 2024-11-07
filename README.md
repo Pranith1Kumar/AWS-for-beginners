@@ -3,7 +3,7 @@ This repo consists of beginner level tasks which can be help you to build your c
 
 ### Exercises
 
-## 1.IAM AWS: Create a User
+## 1. IAM AWS: Create a User
 As you undoubtedly already know, working with the root account in AWS is not advised. As a result, you will establish a new account to serve as the administrator on a regular basis.
 Create a user using the password credentials.
 Add the newly formed user to a group called "admin" and attach the policy called "Administrator Access".
