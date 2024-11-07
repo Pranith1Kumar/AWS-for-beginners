@@ -54,7 +54,7 @@ Ensure the user has a tag named Role with the value DevOps.
 ## 2.Creating an IAM User with Permissions
 AWS Identity and Access Management (IAM), your task is to create a new IAM user who will have the necessary permissions to manage resources in Amazon EC2, DynamoDB, Lambda, and S3. You will achieve this by using both a directly attached policy and an inline policy. Additionally, the new user should be added to an IAM group named Core Services to simplify permission management.
 
-# Step 1: Log in to AWS Management Console
+Step 1: Log in to AWS Management Console
 1. Go to the [AWS Management Console](https://aws.amazon.com/console/).
 2. Enter your AWS account credentials to log in.
 
