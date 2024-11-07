@@ -12,11 +12,7 @@ Add the newly formed user to a group called "admin" and attach the policy called
 
 Ensure the user has a tag named Role with the value DevOps.
 
-### Solution: 
-# AWS IAM User Creation Guide
-
-This document provides a step-by-step guide to create a new IAM user in AWS with administrative access.
-
+### Solution:
 ## Steps to Create an IAM User
 
 ### Step 1: Access the IAM Service
@@ -58,6 +54,4 @@ This document provides a step-by-step guide to create a new IAM user in AWS with
 1. After the user is created, you will see a success message.
 2. Make sure to save the user’s access key and secret access key if applicable, as you will not be able to see them again.
 
-## Conclusion
-You have successfully created a new IAM user with administrative access in AWS. Ensure to manage the user's permissions and access keys securely.
 
