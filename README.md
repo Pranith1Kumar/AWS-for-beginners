@@ -12,18 +12,52 @@ Add the newly formed user to a group called "admin" and attach the policy called
 
 Ensure the user has a tag named Role with the value DevOps.
 
-### solution: 
-Solution
-1.Go to the AWS IAM service.
-2.Click on "Users" on the right side menu (just under "Access Management").
-3.Click the button "Add users"
-4.Insert the user name (e.g., Munna bhai).
-5.Choose the credential type: "Password".
-6.Set the console password to "custom" and click "Next".
-7.Click "Add user to group"
-8.Insert "admin" as the group name.
-9.Check the "AdministratorAccess" policy and click "Create group".
-10.Click "Next: Tags"
-11.Add a tag with the key Role and value DevOps.
-12.Click on "Review" and then "Create User"
+### Solution: 
+# AWS IAM User Creation Guide
+
+This document provides a step-by-step guide to create a new IAM user in AWS with administrative access.
+
+## Steps to Create an IAM User
+
+### Step 1: Access the IAM Service
+1. Log in to your AWS Management Console.
+2. In the search bar, type **IAM** and select **IAM** from the services list.
+
+### Step 2: Navigate to Users
+1. In the left sidebar, click on **Users** under the **Access Management** section.
+
+### Step 3: Add a New User
+1. Click the **Add users** button.
+
+### Step 4: Enter User Details
+1. In the **User  name** field, enter the desired username (e.g., `Munna bhai`).
+
+### Step 5: Choose Credential Type
+1. Under **Select AWS access type**, check the box for **Password**.
+2. Set the console password to **Custom password** and enter your desired password.
+3. Click **Next: Permissions**.
+
+### Step 6: Add User to Group
+1. Click on **Add user to group**.
+2. In the **Group name** field, enter `admin`.
+3. Check the box for the **AdministratorAccess** policy.
+4. Click **Create group**.
+
+### Step 7: Add Tags (Optional)
+1. Click **Next: Tags**.
+2. Click **Add tag**.
+3. In the **Key** field, enter `Role`.
+4. In the **Value** field, enter `DevOps`.
+
+### Step 8: Review and Create User
+1. Click **Next: Review**.
+2. Review the user details and permissions.
+3. Click **Create user**.
+
+### Step 9: Save User Credentials
+1. After the user is created, you will see a success message.
+2. Make sure to save the user’s access key and secret access key if applicable, as you will not be able to see them again.
+
+## Conclusion
+You have successfully created a new IAM user with administrative access in AWS. Ensure to manage the user's permissions and access keys securely.
 
