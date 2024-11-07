@@ -10,43 +10,42 @@ Add the newly formed user to a group called "admin" and attach the policy called
 Ensure the user has a tag named Role with the value DevOps.
 
 ## Steps to Create an IAM User
-
-### Step 1: Access the IAM Service
+Step 1: Access the IAM Service
 1. Log in to your AWS Management Console.
 2. In the search bar, type **IAM** and select **IAM** from the services list.
 
-### Step 2: Navigate to Users
+Step 2: Navigate to Users
 1. In the left sidebar, click on **Users** under the **Access Management** section.
 
-### Step 3: Add a New User
+Step 3: Add a New User
 1. Click the **Add users** button.
 
-### Step 4: Enter User Details
+Step 4: Enter User Details
 1. In the **User  name** field, enter the desired username (e.g., `Munna bhai`).
 
-### Step 5: Choose Credential Type
+Step 5: Choose Credential Type
 1. Under **Select AWS access type**, check the box for **Password**.
 2. Set the console password to **Custom password** and enter your desired password.
 3. Click **Next: Permissions**.
 
-### Step 6: Add User to Group
+Step 6: Add User to Group
 1. Click on **Add user to group**.
 2. In the **Group name** field, enter `admin`.
 3. Check the box for the **AdministratorAccess** policy.
 4. Click **Create group**.
 
-### Step 7: Add Tags (Optional)
+Step 7: Add Tags (Optional)
 1. Click **Next: Tags**.
 2. Click **Add tag**.
 3. In the **Key** field, enter `Role`.
 4. In the **Value** field, enter `DevOps`.
 
-### Step 8: Review and Create User
+Step 8: Review and Create User
 1. Click **Next: Review**.
 2. Review the user details and permissions.
 3. Click **Create user**.
 
-### Step 9: Save User Credentials
+Step 9: Save User Credentials
 1. After the user is created, you will see a success message.
 2. Make sure to save the user’s access key and secret access key if applicable, as you will not be able to see them again.
 
@@ -58,10 +57,10 @@ Step 1: Log in to AWS Management Console
 1. Go to the [AWS Management Console](https://aws.amazon.com/console/).
 2. Enter your AWS account credentials to log in.
 
-## Step 2: Navigate to IAM Service
+Step 2: Navigate to IAM Service
 1. In the search bar at the top, type `IAM` and select **IAM** from the dropdown list.
 
-## Step 3: Create a New IAM User
+Step 3: Create a New IAM User
 1. In the left sidebar, click on **Users**.
 2. Click the **Add users** button.
 3. In the **User  name** field, enter a unique username (e.g., `newUser `).
@@ -69,18 +68,18 @@ Step 1: Log in to AWS Management Console
 5. Set a Console password (you can choose to require the user to reset the password upon first login).
 6. Click **Next: Permissions**.
 
-## Step 4: Set Permissions
-### A. Directly Attach Policy
+Step 4: Set Permissions
+A. Directly Attach Policy
 1. On the **Set permissions** page, select **Attach existing policies directly**.
 2. In the search box, type `AmazonS3FullAccess`.
 3. Check the box next to **AmazonS3FullAccess** to grant full access to S3.
 
-### B. Create Inline Policy
+B. Create Inline Policy
 1. Click on **Next: Tags** (you can skip adding tags for now).
 2. Click **Next: Review**.
 3. Click **Create user**.
 
-## Step 5: Add Inline Policy for EC2 Management
+Step 5: Add Inline Policy for EC2 Management
 1. After the user is created, click on the user’s name to go to the user details page.
 2. Click on the **Permissions** tab.
 3. Click on **Add inline policy**.
@@ -103,11 +102,14 @@ Step 1: Log in to AWS Management Console
 Click on Review policy.
 Give the policy a name (e.g., EC2StartStopPolicy) and click Create policy.
 
-### Step 5: Create IAM Group and Add User 
-Click Groups in the left sidebar, then click Create New Group. 
-Enter Core Services in the Group name field, then click Next Step (you can skip attaching policies for now). 
-Click Create Group. 
-turn to the Users section, then click the Groups tab, click Add user to groups, check the box next to Core Services, and click Add to groups. 
-### Step 6: Review and Save 
-Examine the user information, permissions, and group membership. 
-If necessary, save the user's access key and secret access key.
+Step 5: Create IAM Group and Add User 
+1.In the left sidebar, click on Groups.
+2.Click the Create New Group button.
+3.In the Group name field, enter Core Services.
+4.Click Next Step (you can skip attaching policies for now).
+5.Click Create Group.
+6.Go back to the Users section and select the user you created (e.g., newUser ).
+7.Click on the Groups tab.
+8.Click Add user to groups.
+9.Check the box next to Core Services and click Add to groups.
+Step 6: Review and Save 
