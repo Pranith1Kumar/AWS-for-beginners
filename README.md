@@ -54,32 +54,37 @@ Ensure the user has a tag named Role with the value DevOps.
 ## 2.Creating an IAM User with Permissions
 AWS Identity and Access Management (IAM), your task is to create a new IAM user who will have the necessary permissions to manage resources in Amazon EC2, DynamoDB, Lambda, and S3. You will achieve this by using both a directly attached policy and an inline policy. Additionally, the new user should be added to an IAM group named Core Services to simplify permission management.
 
-### Step 1: Log in to AWS Management Console
-1.Go to the AWS Management Console.
-2.Enter your AWS account credentials to log in.
-### Step 2: Navigate to IAM Service
-In the search bar at the top, type IAM and select IAM from the dropdown list.
-### Step 3: Create a New IAM User
-In the left sidebar, click on Users.
-Click the Add users button.
-In the User name field, enter a unique username (e.g., newUser ).
-Under Access type, check the box for AWS Management Console access.
-Set a Console password (you can choose to require the user to reset the password upon first login).
-Click Next: Permissions.
-### Step 4: Set Permissions
-A. Directly Attach Policy
-On the Set permissions page, select Attach existing policies directly.
-In the search box, type AmazonS3FullAccess.
-Check the box next to AmazonS3FullAccess to grant full access to S3.
-B. Create Inline Policy
-Click on Next: Tags (you can skip adding tags for now).
-Click Next: Review.
-Click Create user.
-After the user is created, click on the user’s name to go to the user details page.
-Click on the Permissions tab.
-Click on Add inline policy.
-Select the JSON tab and enter the following policy to allow starting and stopping EC2 instances:
+## Step 1: Log in to AWS Management Console
+1. Go to the [AWS Management Console](https://aws.amazon.com/console/).
+2. Enter your AWS account credentials to log in.
 
+## Step 2: Navigate to IAM Service
+1. In the search bar at the top, type `IAM` and select **IAM** from the dropdown list.
+
+## Step 3: Create a New IAM User
+1. In the left sidebar, click on **Users**.
+2. Click the **Add users** button.
+3. In the **User  name** field, enter a unique username (e.g., `newUser `).
+4. Under **Access type**, check the box for **AWS Management Console access**.
+5. Set a Console password (you can choose to require the user to reset the password upon first login).
+6. Click **Next: Permissions**.
+
+## Step 4: Set Permissions
+### A. Directly Attach Policy
+1. On the **Set permissions** page, select **Attach existing policies directly**.
+2. In the search box, type `AmazonS3FullAccess`.
+3. Check the box next to **AmazonS3FullAccess** to grant full access to S3.
+
+### B. Create Inline Policy
+1. Click on **Next: Tags** (you can skip adding tags for now).
+2. Click **Next: Review**.
+3. Click **Create user**.
+
+## Step 5: Add Inline Policy for EC2 Management
+1. After the user is created, click on the user’s name to go to the user details page.
+2. Click on the **Permissions** tab.
+3. Click on **Add inline policy**.
+4. Select the **JSON** tab and enter the following policy to allow starting and stopping EC2 instances:
 ````{
     "Version": "2012-10-17",
     "Statement": [
