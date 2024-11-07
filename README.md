@@ -118,7 +118,7 @@ Step 5: Create IAM Group and Add User
 
 Step 6: Review and Save 
 
-## Launch an general purpose EC2 instance using IAM User.
+## 3. Launch an general purpose EC2 instance using IAM User.
 Your task is to create and configure an EC2 instance using the AWS Management Console. Begin by selecting an appropriate Ubuntu AMI and generating a key pair for secure SSH access. Carefully configure the instance to meet specified requirements, ensuring compliance with cloud security and resource management best practices. Focus on aspects such as instance type, security group settings, and network configuration to align with security standards and optimal resource utilization. This exercise emphasizes the importance of precision in deployment and effective use of AWS tools to manage cloud resources securely and efficiently.
 
 1. Log in to the AWS Management Console:
