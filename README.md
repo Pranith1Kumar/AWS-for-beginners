@@ -50,7 +50,7 @@ Step 9: Save User Credentials
 2. Make sure to save the user’s access key and secret access key if applicable, as you will not be able to see them again.
 
 
-## 2.Creating an IAM User with Permissions
+## 2. Creating an IAM User with Permissions
 AWS Identity and Access Management (IAM), your task is to create a new IAM user who will have the necessary permissions to manage resources in Amazon EC2, DynamoDB, Lambda, and S3. You will achieve this by using both a directly attached policy and an inline policy. Additionally, the new user should be added to an IAM group named Core Services to simplify permission management.
 
 Step 1: Log in to AWS Management Console
@@ -123,41 +123,42 @@ Your task is to create and configure an EC2 instance using the AWS Management Co
 
 1. Log in to the AWS Management Console:
 2. Navigate to the AWS Management Console.
-3.To log in, provide your IAM user credentials.
+3. To log in, provide your IAM user credentials.
 4. Navigate to the EC2 dashboard:
 In the AWS Management Console, locate and choose "EC2" from the "Services" menu.
 
 ### Launch Instance:
-1.In the EC2 Dashboard, click the "Launch Instance" button.
-2.Select an Amazon Machine Image (AMI):
-3.In the "Choose an Amazon Machine Image (AMI)" option, look for "Ubuntu."
-4.Choose the required Ubuntu AMI (for example, Ubuntu Server 20.04 LTS).
-5.Choose an instance type.
+1 .In the EC2 Dashboard, click the "Launch Instance" button.
+2. Select an Amazon Machine Image (AMI):
+3. In the "Choose an Amazon Machine Image (AMI)" option, look for "Ubuntu."
+4. Choose the required Ubuntu AMI (for example, Ubuntu Server 20.04 LTS).
+5. Choose an instance type.
 6. In the "Choose an Instance Type" section, pick a general-purpose instance type (t2.micro,t2 family) that falls within the free tier.
 7. Go to "Next: Configure Instance Details."
 
 ### Key pair for login
 Key pair is used to login/connect to instance via ssh through cli, which is a encrypted file contains sha code.
-create a keypair give a name to key pair
-Use keypair type rsa which is publicly available, if not you can create a ED25519 for private use.
-Create Private key file format
+
+1. Create a keypair give a name to key pair
+2. Use keypair type rsa which is publicly available, if not you can create a ED25519 for private use.
+3. Create Private key file format
 .pem
 For use with OpenSSH you can use 
 .ppk
 For use with PuTTY
- Here I need a .pem for my instance so I genareate a rsa with .pem format.
-After keypair is generated the .pem is downloaded which contains the encryption code.
+4. Here I need a .pem for my instance so I genareate a rsa with .pem format.
+5. After keypair is generated the .pem is downloaded which contains the encryption code.
 
 ### Network config
-Ensure that the security group has allowed the ingress traffic only with ssh.
+1. Ensure that the security group has allowed the ingress traffic only with ssh.
 ### Configure Instance Details:
-Maintain the default settings for the number of instances and network.
-If you wish to access the instance over the internet, make sure the "Auto-assign Public IP" option is activated.
-Click "Next: Add Storage."
+1. Maintain the default settings for the number of instances and network.
+2. If you wish to access the instance over the internet, make sure the "Auto-assign Public IP" option is activated.
+3. Click "Next: Add Storage."
 
 ### Add storage:
-In the "Add Storage" section, you will find a default root volume.
-Set the size to 8 GB and make sure the volume type is General Purpose SSD (gp2).
-Select "Next: Add Tags."
+1. In the "Add Storage" section, you will find a default root volume.
+2.Set the size to 8 GB and make sure the volume type is General Purpose SSD (gp2).
+3. Select "Next: Add Tags."
 
 ### Review and launch the instance.
