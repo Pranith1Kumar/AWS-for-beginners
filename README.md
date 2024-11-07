@@ -84,18 +84,21 @@ Step 5: Add Inline Policy for EC2 Management
 2. Click on the **Permissions** tab.
 3. Click on **Add inline policy**.
 4. Select the **JSON** tab and enter the following policy to allow starting and stopping EC2 instances:
-````{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:StartInstances",
-                "ec2:StopInstances"
-            ],
-            "Resource": "*"
-        }
-    ]
+````
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Statement1",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:*"
+			],
+			"Resource": [
+				"*"
+			]
+		}
+	]
 }
 ````
 
