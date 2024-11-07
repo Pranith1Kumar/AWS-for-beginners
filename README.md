@@ -112,4 +112,5 @@ Step 5: Create IAM Group and Add User
 7. Click on the Groups tab.
 8. Click Add user to groups.
 9. Check the box next to Core Services and click Add to groups.
+
 Step 6: Review and Save 
