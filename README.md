@@ -114,3 +114,47 @@ Step 5: Create IAM Group and Add User
 9. Check the box next to Core Services and click Add to groups.
 
 Step 6: Review and Save 
+
+## Launch an general purpose EC2 instance using IAM User.
+Your task is to create and configure an EC2 instance using the AWS Management Console. Begin by selecting an appropriate Ubuntu AMI and generating a key pair for secure SSH access. Carefully configure the instance to meet specified requirements, ensuring compliance with cloud security and resource management best practices. Focus on aspects such as instance type, security group settings, and network configuration to align with security standards and optimal resource utilization. This exercise emphasizes the importance of precision in deployment and effective use of AWS tools to manage cloud resources securely and efficiently.
+
+1. Log in to the AWS Management Console:
+2. Navigate to the AWS Management Console.
+3.To log in, provide your IAM user credentials.
+4. Navigate to the EC2 dashboard:
+In the AWS Management Console, locate and choose "EC2" from the "Services" menu.
+
+### Launch Instance:
+1.In the EC2 Dashboard, click the "Launch Instance" button.
+2.Select an Amazon Machine Image (AMI):
+3.In the "Choose an Amazon Machine Image (AMI)" option, look for "Ubuntu."
+4.Choose the required Ubuntu AMI (for example, Ubuntu Server 20.04 LTS).
+5.Choose an instance type.
+6. In the "Choose an Instance Type" section, pick a general-purpose instance type (t2.micro,t2 family) that falls within the free tier.
+7. Go to "Next: Configure Instance Details."
+
+### Key pair for login
+Key pair is used to login/connect to instance via ssh through cli, which is a encrypted file contains sha code.
+create a keypair give a name to key pair
+Use keypair type rsa which is publicly available, if not you can create a ED25519 for private use.
+Create Private key file format
+.pem
+For use with OpenSSH you can use 
+.ppk
+For use with PuTTY
+ Here I need a .pem for my instance so I genareate a rsa with .pem format.
+After keypair is generated the .pem is downloaded which contains the encryption code.
+
+### Network config
+Ensure that the security group has allowed the ingress traffic only with ssh.
+### Configure Instance Details:
+Maintain the default settings for the number of instances and network.
+If you wish to access the instance over the internet, make sure the "Auto-assign Public IP" option is activated.
+Click "Next: Add Storage."
+
+### Add storage:
+In the "Add Storage" section, you will find a default root volume.
+Set the size to 8 GB and make sure the volume type is General Purpose SSD (gp2).
+Select "Next: Add Tags."
+
+### Review and launch the instance.
