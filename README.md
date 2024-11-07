@@ -103,13 +103,13 @@ Click on Review policy.
 Give the policy a name (e.g., EC2StartStopPolicy) and click Create policy.
 
 Step 5: Create IAM Group and Add User 
-1.In the left sidebar, click on Groups.
-2.Click the Create New Group button.
-3.In the Group name field, enter Core Services.
-4.Click Next Step (you can skip attaching policies for now).
-5.Click Create Group.
-6.Go back to the Users section and select the user you created (e.g., newUser ).
-7.Click on the Groups tab.
-8.Click Add user to groups.
-9.Check the box next to Core Services and click Add to groups.
+1. In the left sidebar, click on Groups.
+2. Click the Create New Group button.
+3. In the Group name field, enter Core Services.
+4. Click Next Step (you can skip attaching policies for now).
+5. Click Create Group.
+6. Go back to the Users section and select the user you created (e.g., newUser ).
+7. Click on the Groups tab.
+8. Click Add user to groups.
+9. Check the box next to Core Services and click Add to groups.
 Step 6: Review and Save 
