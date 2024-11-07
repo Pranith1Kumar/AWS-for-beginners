@@ -128,7 +128,7 @@ Your task is to create and configure an EC2 instance using the AWS Management Co
 In the AWS Management Console, locate and choose "EC2" from the "Services" menu.
 
 ### Launch Instance:
-1 .In the EC2 Dashboard, click the "Launch Instance" button.
+1. In the EC2 Dashboard, click the "Launch Instance" button.
 2. Select an Amazon Machine Image (AMI):
 3. In the "Choose an Amazon Machine Image (AMI)" option, look for "Ubuntu."
 4. Choose the required Ubuntu AMI (for example, Ubuntu Server 20.04 LTS).
