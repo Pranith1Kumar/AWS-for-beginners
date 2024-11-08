@@ -105,7 +105,7 @@ Step 5: Add Inline Policy for EC2 Management
 Click on Review policy.
 Give the policy a name (e.g., EC2StartStopPolicy) and click Create policy.
 
-Step 5: Create IAM Group and Add User 
+Step 5: Create IAM Group and add an User 
 1. In the left sidebar, click on Groups.
 2. Click the Create New Group button.
 3. In the Group name field, enter Core Services.
@@ -149,7 +149,7 @@ For use with PuTTY
 4. Here I need a .pem for my instance so I genareate a rsa with .pem format.
 5. After keypair is generated the .pem is downloaded which contains the encryption code.
 
-### Network config
+### Network configuration
 1. Ensure that the security group has allowed the ingress traffic only with ssh.
 ### Configure Instance Details:
 1. Maintain the default settings for the number of instances and network.
