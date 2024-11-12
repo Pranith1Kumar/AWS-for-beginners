@@ -15,7 +15,8 @@ A database is responsible for storing structured and semi-structured data. There
     
     1. Using B-trees for indexing in databases.
     
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e9a2f3aa-0543-403f-83d2-045397503e2c/fa3c0d01-7f20-4300-bffe-40ac89eee0c4/f05b5371-582d-4a35-abc0-eea4f8482555.png)
+    ![image (1)](https://github.com/user-attachments/assets/dda24b54-4771-4ea0-830f-bea7dee5c89f)
+
     
     1. Usage of joins to retrieve data from multiple tables.
 2. Non-Relational: A non-relational database stores semi-structured data and is more flexible than relational. It allows every item to have any number of fields. Non-relational databases are classified into different types:
@@ -24,14 +25,16 @@ A database is responsible for storing structured and semi-structured data. There
     3. Graph database
     4. Columnar oriented / Column-Family
     
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e9a2f3aa-0543-403f-83d2-045397503e2c/bdd57e3c-1a48-42e1-b74f-6ea270e01c20/image.png)
     
+    ![image (2)](https://github.com/user-attachments/assets/bfa46970-dd95-465e-828f-066df8115eca)
+
 
 ## AWS DATABASE SERVICES
 
 AWS provides a range of services to support both SQL and NO-SQL databases.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e9a2f3aa-0543-403f-83d2-045397503e2c/6e3991ee-844d-4b6e-b157-a32eae403d1c/e93d1605-e981-46f6-9a38-836852394354.png)
+![image (3)](https://github.com/user-attachments/assets/6f8ad398-93b7-4a2b-809d-f29c83b86792)
+
 
 Based on the use-case different services can be used, however, the most popular databases on AWS are RDS and DynamoDB.
 
@@ -58,7 +61,8 @@ Amazon RDS is used for creation of relational databases. It supports multiple SQ
 6. For **Engine Options**, any sql engine can be chosen, but we are going for **MySQL**.
 7. Keep all the **engine version settings** to be default.
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e9a2f3aa-0543-403f-83d2-045397503e2c/5f7f29c4-b7b4-4a0d-bb71-dc778ee4c5c2/image.png)
+![image (4)](https://github.com/user-attachments/assets/e4dd106f-15f7-444a-8cac-b45a3f0840c9)
+
 
 8. Under **Templates**, based on the use-case required template is chosen. But we are going for **Free Tier.** 
 9. The **Availability and Durability** section is disabled for **Free Tier** and is defaulted to be **Single DB Instance.** 
@@ -69,8 +73,9 @@ Amazon RDS is used for creation of relational databases. It supports multiple SQ
 14. Give the master password to login in to your database under **Master Password**
 15. Under **confirm master password,** confirm the password
 16. Leave the **Instance configuration** to have default settings, under **Burstable classes**, choose **db.t3.micro.**
+![image (5)](https://github.com/user-attachments/assets/a706fe24-26e1-4ec8-8082-9c9caa15c1ba)
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e9a2f3aa-0543-403f-83d2-045397503e2c/929bb5b1-ef2d-4eb3-8050-14e24a9cd77b/image.png)
+
 
 17. Under **Storage**, Select **General Purpose SSD (gp2)** under **Storage type**
 18. Enter **20** for **Allocated Storage** (lowest amount of storage possible)
@@ -98,7 +103,8 @@ To connect to the database on AWS we need:
 2. Port number 
     1. port number is also available under connectivity and Security
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e9a2f3aa-0543-403f-83d2-045397503e2c/669f7119-3d8c-4fbc-949b-20f9e9e2d9fe/image.png)
+![image (6)](https://github.com/user-attachments/assets/54b37edf-3a25-4a5a-9821-5da97342ce5e)
+
 
 3. The username entered during creation of database
 4. The password entered during creation of database
@@ -107,7 +113,8 @@ Steps
 
 1. Go to Mysql Workbench/ Install it if not there on computer
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e9a2f3aa-0543-403f-83d2-045397503e2c/3592e834-408e-4b4d-960c-732415753a3f/image.png)
+
+<img width="960" alt="image (7)" src="https://github.com/user-attachments/assets/1b55aa40-f24f-479b-8630-f49467832f23">
 
 2. Go to the Setup new connection wizard, enter a **connection name** (any name)
     1. under **connection method** choose **Standard (TCP/IP)** 
@@ -118,7 +125,8 @@ Steps
     5. **test connection**
     6. ensure that the **public access** is “**yes**” for db instance on the **aws console (if doesn’t work)**
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e9a2f3aa-0543-403f-83d2-045397503e2c/d5d403e7-e78b-49f7-b9d7-490521ee4d64/image.png)
+
+![image (8)](https://github.com/user-attachments/assets/e48508df-33f6-4979-a014-6c4cc60d9aa6)
 
 Connection has been established.
 
