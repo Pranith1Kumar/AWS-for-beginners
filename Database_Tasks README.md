@@ -4,7 +4,8 @@ A database is responsible for storing structured and semi-structured data. There
 
 1. Relational: A relational database stores structured data in tabular format (rows and columns). Its functionalities include:
     
-    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e9a2f3aa-0543-403f-83d2-045397503e2c/333625fd-1b71-4763-8e9a-67a9145a4416/image.png)
+    ![image](https://github.com/user-attachments/assets/9d986bd0-6b5b-41ac-b15d-1246e5c8771c)
+
     
     1. Specialised query language for retrieval (SQL) 
     
