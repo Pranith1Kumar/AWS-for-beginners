@@ -1,4 +1,4 @@
-## *Project Steps for Admission Enquiries Analysis*
+## *Admission Enquiries Analysis*
 
 
 
