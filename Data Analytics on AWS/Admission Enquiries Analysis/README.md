@@ -50,16 +50,16 @@ Action: Create a CSV file named admission_enquiries.csv with the above attribute
 - Navigate to AWS Glue and create a new crawler.
 - Set the data store to S3 and specify the bucket path.
 
-- ![Crawler](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/58cee988f7e1d1419d95d9f152515d4b0f804056/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/AWS%20GlueCraw1.png).
+![Crawler](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/58cee988f7e1d1419d95d9f152515d4b0f804056/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/AWS%20GlueCraw1.png).
 
 1.1 Create an AWS Glue Database
 - Navigate to AWS Glue → Click Databases under the Data Catalog.
 - Click Add database → Enter a name (e.g., admission_db) → Click Create.
 
-- ![Glue Database](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/58cee988f7e1d1419d95d9f152515d4b0f804056/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/AWS%20GlueDB1.png)
+![Glue Database](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/58cee988f7e1d1419d95d9f152515d4b0f804056/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/AWS%20GlueDB1.png)
 
 
-1.2 Create an AWS Glue Crawler
+2. Create an AWS Glue Crawler
 
 - In AWS Glue, go to Crawlers → Click Add Crawler.
 - Name the crawler: admission_crawler.
@@ -74,19 +74,13 @@ s3://admission-enquiries-data/
 - Set Schedule: Choose Run on Demand.
 - Click Finish.
 
-1.3 Run the Crawler & Verify Metadata
+3. Run the Crawler & Verify Metadata
 - In AWS Glue → Crawlers, select admission_crawler.
 - Click Run Crawler.
 Once completed, go to Tables under the Data Catalog.
 - Verify that admission_enquiries_btech table is created with schema details.
 
-2. Configure the Glue Crawler
-- Choose to store the metadata in the AWS Glue Data Catalog.
-
-3. Run the Crawler
-- Execute the crawler to generate schema information for the dataset.
-
-- ![Table Schema](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/58cee988f7e1d1419d95d9f152515d4b0f804056/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/AWS%20GlueT1.png)
+![Table Schema](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/58cee988f7e1d1419d95d9f152515d4b0f804056/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/AWS%20GlueT1.png)
 
 
 # Step 4: AWS Redshift Cluster Setup
@@ -150,7 +144,7 @@ CREATE TABLE admission_enquiries (
 ```
 
 
-- ![Table Creation](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/58cee988f7e1d1419d95d9f152515d4b0f804056/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/AWS%20RQ1.png)
+![Table Creation](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/58cee988f7e1d1419d95d9f152515d4b0f804056/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/AWS%20RQ1.png)
 
 5. Load Data from S3 into Redshift
 - Run the following COPY command (replace <your-bucket> and <your-role-arn>):
@@ -162,7 +156,7 @@ IAM_ROLE 'arn:aws:iam::<your-account-id>:role/RedshiftRole'
 FORMAT AS CSV IGNOREHEADER 1;
 ```
 
-- ![Data loading](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/58cee988f7e1d1419d95d9f152515d4b0f804056/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/AWS%20RQ3.png)
+![Data loading](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/58cee988f7e1d1419d95d9f152515d4b0f804056/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/AWS%20RQ3.png)
 
 Run the following query to verify the data
 
@@ -170,7 +164,7 @@ Run the following query to verify the data
 SELECT * FROM admission_enquiries WHERE interest_area = 'AI' AND BTech_score > 95;
 ```
 
-- ![Verify](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/58cee988f7e1d1419d95d9f152515d4b0f804056/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/AWS%20RQ3.png)
+![Verify](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/58cee988f7e1d1419d95d9f152515d4b0f804056/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/AWS%20RQ3.png)
 
 
 # Step 5: Perform Analysis in Redshift
@@ -248,9 +242,9 @@ Use Below types of charts to Visualize.
 - B.Tech Score Analysis → Use a histogram (B.Tech Score distribution).
 - Interest Analysis → Use a pie chart (Interest Area count).
 
-- ![Bar Plot](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/58cee988f7e1d1419d95d9f152515d4b0f804056/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/Box%20plot.png)
+![Bar Plot](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/58cee988f7e1d1419d95d9f152515d4b0f804056/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/Box%20plot.png)
 
-- ![Stacked Bar Chart](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/e3fb163176766206d1200dc21e43761587991271/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/stacked%20bar.png)
+![Stacked Bar Chart](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/e3fb163176766206d1200dc21e43761587991271/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/stacked%20bar.png)
 
 If you want to push to yout GitHub account follow below commands.
 
