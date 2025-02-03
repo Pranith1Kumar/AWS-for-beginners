@@ -83,6 +83,9 @@ Once completed, go to Tables under the Data Catalog.
 ![Table Schema](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/58cee988f7e1d1419d95d9f152515d4b0f804056/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/AWS%20GlueT1.png)
 
 
+In above image the error occurred is table is already created in my Data Catalog.
+
+
 # Step 4: AWS Redshift Cluster Setup
 
 
@@ -104,7 +107,7 @@ Once completed, go to Tables under the Data Catalog.
 - Number of nodes: 1 (Single-node cluster for free-tier)
 - Database name: `admission_db`
 - Master username: `admin`
-= Master password: `Invincibel23`
+- Master password: `Invincibel23`
 - Click Create Cluster and wait for the cluster to be provisioned (this may take a few minutes).
 
 2. Configure IAM Role for Redshift to Access S3
@@ -246,7 +249,7 @@ Use Below types of charts to Visualize.
 
 ![Stacked Bar Chart](https://github.com/Pranith1Kumar/AWS-for-beginners/blob/e3fb163176766206d1200dc21e43761587991271/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis/Project_png/stacked%20bar.png)
 
-If you want to push to yout GitHub account follow below commands.
+If you want to push to your GitHub account follow below commands.
 
 ```bash
 git init
