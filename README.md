@@ -1,5 +1,5 @@
 # **AWS Projects**
-- [Project 1](https://github.com/Pranith1Kumar/AWS-for-beginners/tree/main/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis).
+- [Project 1](https://github.com/Pranith1Kumar/AWS-for-beginners/tree/main/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis)
 
 
 
