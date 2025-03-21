@@ -1,4 +1,4 @@
-## *Admission Enquiries Analysis*
+## *Admission Inquiry Analysis*
 
 
 
