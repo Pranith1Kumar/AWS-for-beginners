@@ -1,4 +1,4 @@
-![Contract-SNS](https://github.com/user-attachments/assets/fc41082d-9580-4d18-a0eb-6efef21d8270)![Resume-SNS](https://github.com/user-attachments/assets/689f9851-c42f-4a04-8d61-d386c12abb0c)#  *Intelligent Document Classification and Routing System Using AWS*
+# *Intelligent Document Classification and Routing System Using AWS*
 
 ## Prerequisites
 - AWS Account (Free Tier is sufficient)
