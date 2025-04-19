@@ -1,4 +1,4 @@
-# *Intelligent Document Classification and Routing System Using AWS*
+# *Intelligent Document Classification and Routing System Using AWS*                                                              # **LEVEL: INTERMEDIATE**
 
 ## Prerequisites
 - AWS Account (Free Tier is sufficient)
