@@ -1,4 +1,4 @@
-#  *Intelligent Document Classification and Routing System Using AWS*
+![Contract-SNS](https://github.com/user-attachments/assets/fc41082d-9580-4d18-a0eb-6efef21d8270)![Resume-SNS](https://github.com/user-attachments/assets/689f9851-c42f-4a04-8d61-d386c12abb0c)#  *Intelligent Document Classification and Routing System Using AWS*
 
 ## Prerequisites
 - AWS Account (Free Tier is sufficient)
@@ -193,13 +193,17 @@ Check the Output:
 - "Document 'invoice.pdf' classified as Invoice and moved to classified-bucket-invoices."
 
 - SNS Alert for Invoice
+  
 ![Invoice-SNS](https://github.com/user-attachments/assets/9bd90ffd-2c88-4efd-ace3-11d4662f707f)
 
 - SNS Alert for Contract
-![Contract-SNS](https://github.com/user-attachments/assets/45d52aaf-dbe0-4562-80bc-ce22facf1f5e)
+  
+![Contract-SNS](https://github.com/user-attachments/assets/695a13eb-d550-40b7-b435-99e278e6a114)
 
 - SNS Alert for Resume
-![Resume-SNS](https://github.com/user-attachments/assets/760a8859-6618-4605-8c5f-76d130654b89)
+  
+![Resume-SNS](https://github.com/user-attachments/assets/523f5407-98b0-4dba-9adc-5c9a1fee9b10)
+
 
 View Logs:
 - Go to CloudWatch → Logs → Lambda → Select your function.
