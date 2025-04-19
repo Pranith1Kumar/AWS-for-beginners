@@ -99,7 +99,7 @@ Action:
 Scroll to Function Code section
 Replace everything in the code editor with this:
 
-```
+```python
 import json, boto3
 import urllib.parse
 
@@ -153,7 +153,7 @@ def lambda_handler(event, context):
 ```
 
 - Replace YOUR_ACCOUNT_ID with your actual AWS account ID (find it in top-right corner of AWS console).
-- Replace Topic Arn=`arn:aws:sns:us-east-1:YOUR_ACCOUNT_ID:DocumentNotifications`, copy and paste your Arn from SNS ( Check your Region ed; us-east-2).
+- Replace Topic Arn=`arn:aws:sns:us-east-2:YOUR_ACCOUNT_ID:DocumentNotifications`, copy and paste your Arn from SNS ( Check your Region ed; us-east-2).
 - Click Deploy to save. (If you update any code you should deploy again).
 
 ### Step 6: Add Trigger for S3 Upload
@@ -198,7 +198,7 @@ Check the Output:
 - SNS Alert for Contract
 ![Contract-SNS](https://github.com/user-attachments/assets/45d52aaf-dbe0-4562-80bc-ce22facf1f5e)
 
--SNS Alert for Resume
+- SNS Alert for Resume
 ![Resume-SNS](https://github.com/user-attachments/assets/760a8859-6618-4605-8c5f-76d130654b89)
 
 View Logs:
