@@ -1,7 +1,8 @@
 #  *Intelligent Document Classification and Routing System Using AWS*
 
 ## Prerequisites
-- AWS Account (Free Tier is sufficient) → Sign up here
+- AWS Account (Free Tier is sufficient)
+  - [Sign up here](https://signin.aws.amazon.com/signup?request_type=register)
 - Basic familiarity with AWS Console UI
 - Use us-east-2 as your region (or you can use based on your preferences)
 
