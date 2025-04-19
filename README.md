@@ -1,6 +1,6 @@
 # *AWS Projects*
 - [Project 1](https://github.com/Pranith1Kumar/AWS-for-beginners/tree/main/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis)
-- [Project 2](https://github.com/Pranith1Kumar/AWS-for-beginners/tree/main/Data%20Analytics%20on%20AWS/Smart%20Document%20Classification%20and%20Routing%20System%20with%20AWS).
+- [Project 2](https://github.com/Pranith1Kumar/AWS-for-beginners/tree/main/Data%20Analytics%20on%20AWS/Smart%20Document%20Classification%20and%20Routing%20System%20with%20AWS)
 
 
 
@@ -17,42 +17,42 @@ Add the newly formed user to a group called "admin" and attach the policy called
 Ensure the user has a tag named Role with the value DevOps.
 
 ## Steps to Create an IAM User
-Step 1: Access the IAM Service
+### Step 1: Access the IAM Service
 1. Log in to your AWS Management Console.
 2. In the search bar, type **IAM** and select **IAM** from the services list.
 
-Step 2: Navigate to Users
+### Step 2: Navigate to Users
 1. In the left sidebar, click on **Users** under the **Access Management** section.
 
-Step 3: Add a New User
+### Step 3: Add a New User
 1. Click the **Add users** button.
 
-Step 4: Enter User Details
+### Step 4: Enter User Details
 1. In the **User  name** field, enter the desired username (e.g., `Munna bhai`).
 
-Step 5: Choose Credential Type
+### Step 5: Choose Credential Type
 1. Under **Select AWS access type**, check the box for **Password**.
 2. Set the console password to **Custom password** and enter your desired password.
 3. Click **Next: Permissions**.
 
-Step 6: Add User to Group
+### Step 6: Add User to Group
 1. Click on **Add user to group**.
 2. In the **Group name** field, enter `admin`.
 3. Check the box for the **AdministratorAccess** policy.
 4. Click **Create group**.
 
-Step 7: Add Tags (Optional)
+### Step 7: Add Tags (Optional)
 1. Click **Next: Tags**.
 2. Click **Add tag**.
 3. In the **Key** field, enter `Role`.
 4. In the **Value** field, enter `DevOps`.
 
-Step 8: Review and Create User
+### Step 8: Review and Create User
 1. Click **Next: Review**.
 2. Review the user details and permissions.
 3. Click **Create user**.
 
-Step 9: Save User Credentials
+### Step 9: Save User Credentials
 1. After the user is created, you will see a success message.
 2. Make sure to save the user’s access key and secret access key if applicable, as you will not be able to see them again.
 
@@ -60,14 +60,14 @@ Step 9: Save User Credentials
 ## 2. Creating an IAM User with Permissions
 AWS Identity and Access Management (IAM), your task is to create a new IAM user who will have the necessary permissions to manage resources in Amazon EC2, DynamoDB, Lambda, and S3. You will achieve this by using both a directly attached policy and an inline policy. Additionally, the new user should be added to an IAM group named Core Services to simplify permission management.
 
-Step 1: Log in to AWS Management Console
+### Step 1: Log in to AWS Management Console
 1. Go to the [AWS Management Console](https://aws.amazon.com/console/).
 2. Enter your AWS account credentials to log in.
 
-Step 2: Navigate to IAM Service
+### Step 2: Navigate to IAM Service
 1. In the search bar at the top, type `IAM` and select **IAM** from the dropdown list.
 
-Step 3: Create a New IAM User
+### Step 3: Create a New IAM User
 1. In the left sidebar, click on **Users**.
 2. Click the **Add users** button.
 3. In the **User  name** field, enter a unique username (e.g., `newUser `).
@@ -75,7 +75,7 @@ Step 3: Create a New IAM User
 5. Set a Console password (you can choose to require the user to reset the password upon first login).
 6. Click **Next: Permissions**.
 
-Step 4: Set Permissions
+### Step 4: Set Permissions
 A. Directly Attach Policy
 1. On the **Set permissions** page, select **Attach existing policies directly**.
 2. In the search box, type `AmazonS3FullAccess`.
@@ -86,12 +86,12 @@ B. Create Inline Policy
 2. Click **Next: Review**.
 3. Click **Create user**.
 
-Step 5: Add Inline Policy for EC2 Management
+### Step 5: Add Inline Policy for EC2 Management
 1. After the user is created, click on the user’s name to go to the user details page.
 2. Click on the **Permissions** tab.
 3. Click on **Add inline policy**.
 4. Select the **JSON** tab and enter the following policy to allow starting and stopping EC2 instances:
-````
+```Json
 {
 	"Version": "2012-10-17",
 	"Statement": [
@@ -107,12 +107,12 @@ Step 5: Add Inline Policy for EC2 Management
 		}
 	]
 }
-````
+```
 
 Click on Review policy.
 Give the policy a name (e.g., EC2StartStopPolicy) and click Create policy.
 
-Step 5: Create IAM Group and add an User 
+### Step 5: Create IAM Group and add an User 
 1. In the left sidebar, click on Groups.
 2. Click the Create New Group button.
 3. In the Group name field, enter Core Services.
@@ -123,7 +123,7 @@ Step 5: Create IAM Group and add an User
 8. Click Add user to groups.
 9. Check the box next to Core Services and click Add to groups.
 
-Step 6: Review and Save 
+### Step 6: Review and Save 
 
 ## 3. Launch an general purpose EC2 instance using IAM User.
 Your task is to create and configure an EC2 instance using the AWS Management Console. Begin by selecting an appropriate Ubuntu AMI and generating a key pair for secure SSH access. Carefully configure the instance to meet specified requirements, ensuring compliance with cloud security and resource management best practices. Focus on aspects such as instance type, security group settings, and network configuration to align with security standards and optimal resource utilization. This exercise emphasizes the importance of precision in deployment and effective use of AWS tools to manage cloud resources securely and efficiently.
@@ -215,15 +215,16 @@ This can be connect to your instance in aws console.
 2. Go to the location where your key pair (.pem) file is placed.
 3. Changing Permissions (Linux/Mac):
 Run this command:
-````
+
+```powershell
 chmod 400 MyKeyPair.pem
-````
+```
 
 4. Connect to your instance.
 5. To connect, use the following command (replace your-public-ip with your instance's public IP address).
-````
+```powershell
 ssh -i "MyKeyPair.pem" ubuntu@your-public-ip
-````
+```
 Congratulations! You have successfully launched and accessed an EC2 instance with an Ubuntu AMI and a gp2 volume.
 
 ### 4. EC2 Serial Console
@@ -243,7 +244,6 @@ The EC2 Serial Console is a text-based interface that lets you access the serial
 11. Select the "Serial Console" tab.
 12. Connect:
 13. To open a session with the serial terminal, click the "Connect" button.
-
 
 
 
