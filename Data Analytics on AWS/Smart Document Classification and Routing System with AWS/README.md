@@ -5,6 +5,7 @@
 - Basic familiarity with AWS Console UI
 - Use us-east-2 as your region (or you can use based on your preferences)
 
+![Smart Document Classification and Routing System with AWS drawio](https://github.com/user-attachments/assets/eafda48e-0e4b-47b7-8a6c-b73fcf14e11f)
 
 ## Project Overview
 This project is an automated serverless pipeline built using AWS services that intelligently processes and classifies incoming documents. When a document (e.g., PDF, Word) is uploaded to an S3 bucket, it automatically:
@@ -29,10 +30,9 @@ Create these 4 buckets: (Bucket name should be in lowercase)
 - classified-bucket-resumes
 - classified-bucket-contracts
 
-![classifed-bucket](https://github.com/user-attachments/assets/8736c0c7-8275-4c42-bad5-293acc055cca)
 ![Incoming-bucket](https://github.com/user-attachments/assets/cc9c1e02-e0f3-429b-8777-ed43e01d63c5)
 
-- Continue with other two buckets don't uncheck the Block all public access beacause we are using it private
+- Continue with other three buckets don't uncheck the Block all public access beacause we are using it private
 
 Bucket Settings:
 Leave all settings default
@@ -93,12 +93,12 @@ Action:
 - Execution Role: Use existing role → Select ```LambdaDocumentProcessorRole```
 - Click Create Function
 
-Step 5: Add Classification Code to Lambda
-Scroll to Function Code section
+### Step 5: Add Classification Code to Lambda
 
+Scroll to Function Code section
 Replace everything in the code editor with this:
 
-```python
+```
 import json, boto3
 import urllib.parse
 
@@ -121,16 +121,16 @@ def lambda_handler(event, context):
     # Simple classification logic
     if "invoice" in extracted_text:
         doc_type = "Invoice"
-        target_bucket = "classified-invoices-bucket"
+        target_bucket = "classified-bucket-invoices"
     elif "resume" in extracted_text or "curriculum" in extracted_text:
         doc_type = "Resume"
-        target_bucket = "classified-resumes-bucket"
+        target_bucket = "classified-bucket-resumes"
     elif "contract" in extracted_text or "agreement" in extracted_text:
         doc_type = "Contract"
-        target_bucket = "classified-contracts-bucket"
+        target_bucket = "classified-bucket-contracts"
     else:
         doc_type = "Unknown"
-        target_bucket = "classified-contracts-bucket"  # fallback
+        target_bucket = "classified-bucket-contracts"  # fallback
 
     # Move file to the classified bucket
     s3.copy_object(
@@ -142,7 +142,7 @@ def lambda_handler(event, context):
 
     # Send notification
     sns.publish(
-        TopicArn='arn:aws:sns:us-east-1:YOUR_ACCOUNT_ID:DocumentNotifications',
+        TopicArn='arn:aws:sns:us-east-2:YOUR_ACCOUNT_ID:DocumentNotifications',
         Message=f"Document '{key}' classified as {doc_type} and moved to {target_bucket}.",
         Subject="New Document Routed"
     )
@@ -150,59 +150,63 @@ def lambda_handler(event, context):
     return {'statusCode': 200, 'body': json.dumps('Success')}
 
 ```
-✅ Replace YOUR_ACCOUNT_ID with your actual AWS account ID (find it in top-right corner of AWS console).
 
-Click Deploy to save.
+- Replace YOUR_ACCOUNT_ID with your actual AWS account ID (find it in top-right corner of AWS console).
+- Replace Topic Arn=`arn:aws:sns:us-east-1:YOUR_ACCOUNT_ID:DocumentNotifications`, copy and paste your Arn from SNS ( Check your Region ed; us-east-2).
+- Click Deploy to save. (If you update any code you should deploy again).
 
-🔁 Step 6: Add Trigger for S3 Upload
+### Step 6: Add Trigger for S3 Upload
 This tells AWS to run the Lambda function when a file is uploaded.
 
-🔧 Action:
-Go to S3 → incoming-docs-bucket
+Action:
+1. Go to S3 → incoming-docs-bucket
+2. Click Properties → Scroll down to Event notifications
+3. Click Create event notification
+  - Name: TriggerLambda
+  - Event type: PUT
+4. Prefix/Suffix: Leave empty
+5. Destination: Lambda function
+6. Select DocumentClassifier
+7. Save.
 
-Click Properties → Scroll down to Event notifications
+![S3-Event](https://github.com/user-attachments/assets/252caafc-ac2d-4559-8654-1a3142a86aee)
 
-Click Create event notification
+## Testing 
+1. Upload a Sample File:
+2. Go to S3 → incoming-docs-bucket → Click Upload
+3. Use one of these sample texts in a .txt, .pdf, or .docx:
 
-Name: TriggerLambda
+![Contract](https://github.com/user-attachments/assets/78c1fc8d-f7d0-4ea5-a7b8-c6dbc24c805f)
 
-Event type: PUT
+4. ```“This is an invoice for $5000.”``` → Should go to classified-invoices-bucket
+5. ```“My name is John Doe. Attached is my resume.”``` → Should go to classified-resumes-bucket
+6. ```“This contract is signed on March 15.”``` → Should go to classified-contracts-bucket
+7. Here I have uploaded Invoices.pdf so my document is moved to classified-bucket-invoices.
 
-Prefix/Suffix: Leave empty
+Check the Output:
+- Go to the correct target bucket – your file should now be there
 
-Destination: Lambda function
+![Contract in Conbuc](https://github.com/user-attachments/assets/77968352-2145-4065-9451-6fa5381bb53b)
 
-Select DocumentClassifier
+- Check your email inbox – you'll get a message like:
+- "Document 'invoice.pdf' classified as Invoice and moved to classified-bucket-invoices."
 
-Save.
+- SNS Alert for Invoice
+![Invoice-SNS](https://github.com/user-attachments/assets/9bd90ffd-2c88-4efd-ace3-11d4662f707f)
 
-🧪 PART 3: Test the System
-📄 Upload a Sample File:
-Go to S3 → incoming-docs-bucket → Click Upload
+- SNS Alert for Contract
+![Contract-SNS](https://github.com/user-attachments/assets/45d52aaf-dbe0-4562-80bc-ce22facf1f5e)
 
-Use one of these sample texts in a .txt, .pdf, or .docx:
+-SNS Alert for Resume
+![Resume-SNS](https://github.com/user-attachments/assets/760a8859-6618-4605-8c5f-76d130654b89)
 
-“This is an invoice for $5000.” → Should go to classified-invoices-bucket
-
-“My name is John Doe. Attached is my resume.” → Should go to classified-resumes-bucket
-
-“This contract is signed on March 15.” → Should go to classified-contracts-bucket
-
-📩 Check the Output:
-Go to the correct target bucket – your file should now be there
-
-Check your email inbox – you'll get a message like:
-
-"Document 'invoice.pdf' classified as Invoice and moved to classified-invoices-bucket."
-
-🧾 View Logs:
-Go to CloudWatch → Logs → Lambda → Select your function
-
-View logs for detailed success/failure messages
+View Logs:
+- Go to CloudWatch → Logs → Lambda → Select your function.
+- View logs for detailed success/failure messages.
 
 🎯 What You Achieved
-✅ Built an automated document classification system
-✅ Used AWS S3, Lambda, Textract, SNS together
-✅ Learned how to classify text using Python
-✅ Learned how to route and manage files using AWS
-✅ Got real-time email alerts when files were processed
+- Built an automated document classification system.
+- Used AWS S3, Lambda, Textract, SNS together.
+- Learned how to classify text using Python.
+- Learned how to route and manage files using AWS.
+- Got real-time email alerts when files were processed.
