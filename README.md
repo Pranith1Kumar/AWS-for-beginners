@@ -1,10 +1,5 @@
 # *AWS Projects*
-Begineer Projects:
-- [Project 1](https://github.com/Pranith1Kumar/AWS-for-beginners/tree/main/Data%20Analytics%20on%20AWS/Admission%20Enquiries%20Analysis)
-
-Intermediate Projects:
-- [Project 1](https://github.com/Pranith1Kumar/AWS-for-beginners/tree/main/Data%20Analytics%20on%20AWS/Smart%20Document%20Classification%20and%20Routing%20System%20with%20AWS)
-
+[Access your AWS Projects here](https://github.com/Pranith1Kumar/AWS-Shelf)
 
 
 
